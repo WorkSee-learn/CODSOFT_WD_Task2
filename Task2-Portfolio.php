@@ -24,6 +24,175 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
+    <style>
+        .skills{
+            margin-left: 150px;
+        }
+        .contain_skills {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            padding: 200px;
+        }
+
+        .container_skills .main-title {
+            max-width: 100px;
+            margin: 0px auto;
+            text-align: center;
+            font-family: helvetica;
+        }
+
+        .container_skills .main-title h3 {
+            position: relative;
+            font-size: 40px;
+            color: #242223;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .container_skills .main-title h3::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 1px;
+            top: 125%;
+            left: 0;
+            background-color: #808080;
+        }
+
+        .container_skills .main-title h3::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 3px;
+            background-color: #d03645;
+            top: calc(125% - 1px);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .main-title p {
+            color: #808080;
+        }
+
+        .container_skills .row {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 70px;
+        }
+
+        .row .col {
+            flex-basis: 46%;
+        }
+
+        .row .sub-title h2 {
+            position: relative;
+            color: #242223;
+            font-size: 22px;
+            font-family: helvetica;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .row .sub-title h2::before {
+            content: '';
+            position: absolute;
+            width:850%;
+            height: 1px;
+            top: 125%;
+            left: 0;
+            background-color: #808080;
+        }
+
+        .row .sub-title h2::after {
+            content: '';
+            position: absolute;
+            width: 25%;
+            height: 3px;
+            top: calc(125% - 1px);
+            left: 0;
+            background-color: #d03645;
+        }
+
+        .subject {
+            font-size: 18px;
+            font-weight: thin;
+            color: #808080;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .progress-bar {
+            position: relative;
+            width: 80%;
+            height: 5px;
+            background-color: #808080;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar::after {
+            position: absolute;
+            content: attr(value);
+            top: -35px;
+            right: 0;
+            color: #808080;
+            font-size: 18px;
+        }
+
+        .progress-line {
+            position: absolute;
+            width: 0%;
+            height: 7px;
+            background-color: #d03645;
+            border-radius: 15px;
+            top: -1px;
+            animation: animate 2.0s cubic-bezier(1, 0.2, 0.2, 1) forwards;
+        }
+
+        @keyframes animate {
+            100% {
+                width: 70%;
+            }
+        }
+
+        .progress-line::after {
+            content: '';
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            top: 50%;
+            left: 100%;
+            transform: translate(-50%, -50%);
+            background-color: #d03645;
+        }
+
+        @media(max-width: 768px) {
+            .container {
+                padding: 30px 8%;
+            }
+        }
+
+        @media(max-width: 568px) {
+            .container .row {
+                flex-direction: column;
+            }
+
+            .container_skills .main-title h1 {
+                font-size: 36px;
+            }
+
+            .container_skills .row {
+                margin-top: 30px;
+            }
+
+            .row .col:nth-child(2) {
+                margin-top: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -66,14 +235,13 @@
 
 
     <!--==================== MAIN ====================-->
-    <div class="main">
+    < class="main">
 
 
         <!--==================== HOME ====================-->
-        <section class="home section" id="home"
-            style="background-image: url('images/HomeBG (2).jpg');
+        <section class="home section" id="home" style="background-image: url('images/HomeBG (2).jpg');
              background-size: cover; height:60%;">
-            <div  data-aos="fade-left" class="home__container container grid">
+            <div data-aos="fade-left" class="home__container container grid">
                 <div class="home__content grid">
                     <div class="home__social">
                         <a href="https://www.instagram.com/" target="_blank" class="home__social-icon">
@@ -178,36 +346,61 @@
             </div>
         </section>
 
-        <!--==================== PROJECTS ====================-->
-        <section class="projects section" id="projects">
-            <h2 class="section__title">Projects</h2>
-            <span class="section__subtitle">My Work</span>
-
-            <div class="portfolio__container container">
-                <div id="carouselProjects" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <iframe width="560" height="315" ></iframe>
-                            <div class="portfolio__data">
-                                <p></p>
-                                <a href="pdf/certificates.pdf"
-                                    class="button button--flex button--small portfolio-button">View</a>
-                            </div>
-                        </div>
-                    </div>
-                 <!--   <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjects"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselProjects"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>-->
+        <!--==================== Skills ====================-->
+        <div data-aos="fade-left" class="skills">
+            <div class="container_skills">
+                <div class="main-title">
+                    <h3>My Skills</h3>
+                    <p></p>
                 </div>
+                <div class="row">
+                    <!--   *******  Left Section Starts here  *******   -->
+                    <section class="col">
+                        <div class="sub-title">
+                            <h2>Programming Skills</h2>
+                        </div>
+
+                        <div class="skills-container">
+
+                            <div class="skill">
+                                <div class="subject">HTML</div>
+                                <div class="progress-bar" value="94%">
+                                    <div class="progress-line" style="max-width: 94%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="subject">CSS</div>
+                                <div class="progress-bar" value="83%">
+                                    <div class="progress-line" style="max-width: 83%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="subject">JavaScript</div>
+                                <div class="progress-bar" value="88%">
+                                    <div class="progress-line" style="max-width: 88%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="subject">Php</div>
+                                <div class="progress-bar" value="68%">
+                                    <div class="progress-line" style="max-width: 68%"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!--   ********  Left Section Ends Here  *******  -->
+
+                </div>
+
             </div>
-        </section>
+        </div>
+
+
 
         <!--==================== CONTACT ME ====================-->
         <div class="contact section" id="contact">
@@ -253,7 +446,7 @@
                     <form action="poojakushwaha52797@gmail.com" method="post">
                         <center> <span class="fas fa-envelope fa-lg "></span></center><br><br>
                         Name<input type="text" placeholder="Enter Name here" name="name" class="form-control" required
-                            autocomplete="off" required >
+                            autocomplete="off" required>
                         Mobile <input type="text" placeholder="Enter Mobile here" name="mobile" class="form-control"
                             maxlength="10" required autocomplete="off">
                         Email Address<input type="email" id="email_address" class="form-control"
